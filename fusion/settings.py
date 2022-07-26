@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l-w_a-^t0bca@*^i!r+8*p6+s@5gzmi+eqlcbuvlk*_&xs*ey!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'django_adminlte',
-    'django_adminlte_theme',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +76,7 @@ WSGI_APPLICATION = 'fusion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -89,12 +87,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-'''
 
+'''
 DATABASES = {
     'default': dj_database_url.config()
 }
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -134,7 +132,7 @@ MEDIA_URL = 'media/'
 STATIC_ROOT = str(BASE_DIR/'static')
 MEDIA_ROOT = str(BASE_DIR/'media')
 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 '''
 #Email produção:
